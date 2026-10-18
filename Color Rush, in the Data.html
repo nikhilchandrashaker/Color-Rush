@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Color Rush, in the Data</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1d2430;--mut:#5d6675;--card:#fff;--line:#dcd8ce;--a:#c0392b;--b:#1f6f8b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181f;--fg:#e8e6df;--mut:#9aa3b2;--card:#1c222c;--line:#323a47;--a:#ef7b6d;--b:#5db7d4}}
+:root[data-theme="dark"]{--bg:#14181f;--fg:#e8e6df;--mut:#9aa3b2;--card:#1c222c;--line:#323a47;--a:#ef7b6d;--b:#5db7d4}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,"Times New Roman",serif}
+main{max-width:860px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:2.1rem;line-height:1.15;margin:.2em 0}h2{font-size:1.3rem;margin:2em 0 .4em}
+.sub{color:var(--mut);font-style:italic}.k{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:22px 0}
+.k div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}.k b{display:block;font:700 1.7rem/1.2 system-ui,sans-serif}.k span{color:var(--mut);font:.85rem/1.4 system-ui,sans-serif}
+.w{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px}svg{display:block;min-width:620px;width:100%;height:auto;font:11px system-ui,sans-serif}
+.cap{color:var(--mut);font:.82rem/1.5 system-ui,sans-serif;margin:.4em 0}.q{border-left:3px solid var(--a);padding:.1em 1em;margin:1em 0;background:var(--card)}
+.q small{color:var(--mut);font-family:system-ui,sans-serif}.lim li{margin:.3em 0}
+</style></head><body><main>
+<p class="sub">NFL Color Rush, 2015–2017</p><h1>Color Rush, in the data</h1>
+<p>The NFL’s one-color Thursday uniforms were meant to make a weak night of football pop. What do 32 games, sourced audiences and a hand-checked uniform log actually show?</p>
+<div class="k"><div><b>30 of 32</b><span>games with sourced Nielsen TV viewership</span></div><div><b>15 of 23</b><span>games with sourced uniform detail had a team in white</span></div><div><b>-13%</b><span>simulcast average, 2016 to 2017 (context, not a causal estimate)</span></div></div>
+<h2>1. Network decides the audience</h2>
+<p>Each dot is a game. Games on NFL Network alone drew roughly 5–8 million viewers; simulcasts on CBS or NBC drew about 10–22 million. Any “Color Rush effect” has to be measured inside one group, not across them.</p>
+<div class="w"><svg id="c1" viewBox="0 0 860 330" role="img" aria-label="Viewers by game, colored by network type"></svg></div>
+<p class="cap">Viewers are Nielsen TV figures as reported by trade press. Hover a dot for the game. Two Thanksgiving-night games have no sourced figure.</p>
+<h2>2. Season averages move with the schedule</h2>
+<div class="w"><svg id="c2" viewBox="0 0 860 260" role="img" aria-label="Average viewers by network type and season"></svg></div>
+<p class="cap">Simulcast games averaged 15.9M in 2016 and 13.8M in 2017, but 2017 also changed networks, streaming partner and matchups. NFL Network-only games did not fall (6.1M to 7.1M, only 3–4 games each).</p>
+<h2>3. The documented accessibility failure was one game</h2>
+<p>Only the first game, Bills at Jets on November 12, 2015, paired all red with all green. Colorblind viewers said they couldn’t tell the teams apart, and the NFL said its TV test hadn’t accounted for color blindness. For 2016 the league consulted experts and put one team in white in many games. In the 2017 rematch the Jets wore green and the Bills white. Of the 23 games with any sourced uniform detail, 15 had a team in white; the other 9 have no uniform detail yet.</p>
+<h2>4. Who objected</h2>
+<div class="q">NFL statement after the 2015 game: its standard TV test missed color blindness and would be expanded. <small>NPR, Nov. 13, 2015</small></div>
+<div class="q">Al Michaels, in a 2016 interview, questioned the uniforms and said he couldn’t see numbers in a 49ers–Cardinals game. <small>Awful Announcing — one on-air case, anecdotal</small></div>
+<div class="q">Fox’s Bill Wanger said on April 10, 2018 that the uniforms were going away because fans didn’t need gimmicks. <small>theScore, reported secondhand</small></div>
+<h2>What this can’t say</h2>
+<ul class="lim"><li>It can’t show Color Rush raised or lowered ratings. Every Thursday game after 2015 was a Color Rush game, so there is almost no clean control group.</li><li>Jersey sales: no verified public unit or revenue series exists.</li><li>Fan sentiment: a Reddit collection protocol is built but not yet run.</li><li>Colorblindness scores for each game still need uniform photos and a simulator.</li></ul>
+<p class="cap">Built from NFL_Color_Rush_Expanded_Dataset.xlsx. Game results verified against nflverse; viewership from Sports Media Watch and NBC releases; uniforms from AP, ESPN, Wikipedia and team sites.</p>
+</main><script>
+var G=[{"d":"2015-11-12","s":2015,"v":7.6,"n":"n","t":"Bills @ Jets"},{"d":"2015-11-19","s":2015,"v":6.6,"n":"n","t":"Titans @ Jaguars"},{"d":"2015-12-17","s":2015,"v":6.0,"n":"n","t":"Buccaneers @ Rams"},{"d":"2016-09-15","s":2016,"v":15.4,"n":"s","t":"Jets @ Bills"},{"d":"2016-09-22","s":2016,"v":17.5,"n":"s","t":"Texans @ Patriots"},{"d":"2016-09-29","s":2016,"v":7.9,"n":"n","t":"Dolphins @ Bengals"},{"d":"2016-10-06","s":2016,"v":12.1,"n":"s","t":"Cardinals @ 49ers"},{"d":"2016-10-13","s":2016,"v":14.5,"n":"s","t":"Broncos @ Chargers"},{"d":"2016-10-20","s":2016,"v":14.2,"n":"s","t":"Bears @ Packers"},{"d":"2016-10-27","s":2016,"v":5.1,"n":"n","t":"Jaguars @ Titans"},{"d":"2016-11-03","s":2016,"v":5.84,"n":"n","t":"Falcons @ Buccaneers"},{"d":"2016-11-10","s":2016,"v":5.7,"n":"n","t":"Browns @ Ravens"},{"d":"2016-11-17","s":2016,"v":13.3,"n":"s","t":"Saints @ Panthers"},{"d":"2016-12-01","s":2016,"v":21.8,"n":"s","t":"Cowboys @ Vikings"},{"d":"2016-12-08","s":2016,"v":17.4,"n":"s","t":"Raiders @ Chiefs"},{"d":"2016-12-15","s":2016,"v":14.65,"n":"s","t":"Rams @ Seahawks"},{"d":"2016-12-22","s":2016,"v":17.9,"n":"s","t":"Giants @ Eagles"},{"d":"2017-09-14","s":2017,"v":8.1,"n":"n","t":"Texans @ Bengals"},{"d":"2017-09-21","s":2017,"v":7.4,"n":"n","t":"Rams @ 49ers"},{"d":"2017-09-28","s":2017,"v":14.6,"n":"s","t":"Bears @ Packers"},{"d":"2017-10-05","s":2017,"v":15.4,"n":"s","t":"Patriots @ Buccaneers"},{"d":"2017-10-12","s":2017,"v":14.59,"n":"s","t":"Eagles @ Panthers"},{"d":"2017-10-19","s":2017,"v":14.4,"n":"s","t":"Chiefs @ Raiders"},{"d":"2017-10-26","s":2017,"v":11.4,"n":"s","t":"Dolphins @ Ravens"},{"d":"2017-11-02","s":2017,"v":5.84,"n":"n","t":"Bills @ Jets"},{"d":"2017-11-09","s":2017,"v":13.1,"n":"s","t":"Seahawks @ Cardinals"},{"d":"2017-11-16","s":2017,"v":13.5,"n":"s","t":"Titans @ Steelers"},{"d":"2017-11-30","s":2017,"v":15.6,"n":"s","t":"Redskins @ Cowboys"},{"d":"2017-12-07","s":2017,"v":14.61,"n":"s","t":"Saints @ Falcons"},{"d":"2017-12-14","s":2017,"v":10.64,"n":"s","t":"Broncos @ Colts"}];var A={"n2015":[6.7,3],"n2016":[6.1,4],"s2016":[15.9,10],"n2017":[7.1,3],"s2017":[13.8,10]};var NS="http://www.w3.org/2000/svg";
+function el(p,t,a,x){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;p.appendChild(e);return e}
+function cv(n){return getComputedStyle(document.documentElement).getPropertyValue(n)}
+function draw(){var s=document.getElementById("c1");s.innerHTML="";var L=46,R=16,T=18,B=40,W=860,Hh=330,pw=W-L-R,ph=Hh-T-B,n=G.length;
+var y=function(v){return T+ph-v/24*ph},x=function(i){return L+(i+.5)*pw/n},fg=cv("--fg"),mu=cv("--mut"),ln=cv("--line"),ca=cv("--a"),cb=cv("--b");
+for(var v=0;v<=24;v+=6){el(s,"line",{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:ln});el(s,"text",{x:L-8,y:y(v)+4,"text-anchor":"end",fill:mu},v+"M")}
+var last=null;G.forEach(function(g,i){if(g.s!==last){if(last!==null)el(s,"line",{x1:x(i)-pw/n/2,x2:x(i)-pw/n/2,y1:T,y2:T+ph,stroke:ln,"stroke-dasharray":"3 3"});el(s,"text",{x:x(i)-pw/n/2+4,y:Hh-18,fill:mu},g.s);last=g.s}
+var c=el(s,"circle",{cx:x(i),cy:y(g.v),r:6,fill:g.n==="n"?cb:ca});el(c,"title",{},g.t+" ("+g.d+"): "+g.v+"M")});
+el(s,"circle",{cx:L+6,cy:Hh-6,r:5,fill:ca});el(s,"text",{x:L+16,y:Hh-2,fill:fg},"CBS or NBC simulcast");el(s,"circle",{cx:L+170,cy:Hh-6,r:5,fill:cb});el(s,"text",{x:L+180,y:Hh-2,fill:fg},"NFL Network only");
+var t=document.getElementById("c2");t.innerHTML="";var bars=[["n2015","NFLN 2015"],["n2016","NFLN 2016"],["n2017","NFLN 2017"],["s2016","Simulcast 2016"],["s2017","Simulcast 2017"]],bw=100,gap=60;
+bars.forEach(function(b,i){var v=A[b[0]][0],h=v/18*180,bx=70+i*(bw+gap),by=210-h;el(t,"rect",{x:bx,y:by,width:bw,height:h,fill:b[0][0]==="n"?cb:ca,rx:3});el(t,"text",{x:bx+bw/2,y:by-6,"text-anchor":"middle",fill:fg,"font-weight":"700"},v+"M");el(t,"text",{x:bx+bw/2,y:228,"text-anchor":"middle",fill:mu},b[1]+" (n="+A[b[0]][1]+")")});
+el(t,"line",{x1:50,x2:W-20,y1:210,y2:210,stroke:ln})}
+draw();matchMedia("(prefers-color-scheme:dark)").addEventListener("change",draw)
+</script></body></html>
